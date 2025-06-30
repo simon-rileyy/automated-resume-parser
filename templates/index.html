@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Parser</title>
+</head>
+<body>
+    <h1>Automated Resume Parser</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if parsed %}
+        <h2>Parsed Details</h2>
+        <ul>
+            <li><strong>Name:</strong> {{ parsed.name }}</li>
+            <li><strong>Email:</strong> {{ parsed.email }}</li>
+            <li><strong>Skills:</strong> {{ parsed.skills }}</li>
+            <li><strong>Education:</strong> {{ parsed.education }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
